@@ -13,7 +13,6 @@ f_mnist_classes = ['T-shit/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal
 train_images, test_images = datasets_resize(train_images, test_images)
 
 #Show a random picked image
-#show_img = random.choice(train_images)
 
 model = cnn_arch()
 model.summary()
@@ -22,7 +21,7 @@ model.summary()
 history = model.fit(train_images,
                     train_labels,
                     batch_size=64,
-                    epochs=3,
+                    epochs=5,
                     validation_data=(test_images, test_labels))
 
 plt.plot(history.history['accuracy'], label='accuracy')
@@ -31,5 +30,6 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.ylim([0.5, 1])
 plt.legend(loc='lower right')
+plt.show()
 
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
