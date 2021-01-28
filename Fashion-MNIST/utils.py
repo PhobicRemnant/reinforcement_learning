@@ -14,6 +14,7 @@ def plot_samples(images):
 def dataset_norm(dataset):
     return dataset.astype('float32')/255
 
-def dataset_resize(dataset):
-    dataset = dataset.resize((dataset.shape[0], 28, 28, 1))
-    return dataset
+def datasets_resize(train_dataset, test_dataset):
+    train_dataset = train_dataset.reshape((train_dataset.shape[0], 28, 28, 1))
+    test_dataset = test_dataset.reshape((test_dataset.shape[0], 28, 28, 1))
+    return train_dataset, test_dataset
