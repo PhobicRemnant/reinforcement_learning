@@ -1,5 +1,15 @@
 import gym
 
+def env_discretization(discrete_states, env):
+
+    # Define the number of segments or 'discrete_states' the discrete space will have
+    # Take the continuous variable space to discrete space
+    DISCRETE_OBS_SIZE = [discrete_states] * (len(env.observation_space.high))
+    # And now the discrete
+    DISCRETE_OBS_WIN_SIZE = (env.observation_space.high - env.observation_space.low) / DISCRETE_OBS_SIZE
+
+    return  DISCRETE_OBS_SIZE,DISCRETE_OBS_WIN_SIZE
+
 def env_test_step(env):
     # To simulate the agent interacting with the environment, a loop that goes through the desired time steps can be setup
     # with multiple 'env.step(action)' and 'env.render()' to update the visual representation
