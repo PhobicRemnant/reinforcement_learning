@@ -19,7 +19,7 @@ class Qlearning_greedy:
         self.epsilon = epsilon
 
 
-    def discretice_env(self, discrete_states):
+    def discretize_env(self, discrete_states):
         # Define the number of segments or 'discrete_states' the discrete space will have
         # Take the continuous variable space to discrete space
         DISCRETE_OBS_SIZE = [discrete_states] * (len(self.env.observation_space.high))

@@ -19,5 +19,5 @@ q_table = np.random.uniform(high=2,low=-2,size=(DISCRETE_OBS_SIZE + [env.action_
 
 # Run Greedy Q-learning 
 rl_env = Qlearning_greedy(env,learning_rate, discount_rate)
-rl_env.discretice_env(30)
+rl_env.discretize_env(30)
 rl_env.solve_env(episodes,render_rate)
